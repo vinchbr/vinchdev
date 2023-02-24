@@ -1,18 +1,45 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from 'react-router-dom';
 import { store } from './app/store';
-import App from './App';
+import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import 'semantic-ui-css/semantic.min.css'
+import ErrorPage from './routes/error-page';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App/>,
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: '/adoption',
+                element: <div>Adoption!</div>
+            },
+            {
+                path: '/admin',
+                element: <div>Admin</div>
+            },
+            {
+                path: '/contact',
+                element: <div>Contact</div>
+            }
+        ]
+    }
+]);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+        <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
