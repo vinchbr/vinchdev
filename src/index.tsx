@@ -5,12 +5,15 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from 'react-router-dom';
+
 import { store } from './app/store';
 import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
+import ErrorPage from './routes/error-page';
+import Adoption from "./routes/Adoption";
+
 import './index.css';
 import 'semantic-ui-css/semantic.min.css'
-import ErrorPage from './routes/error-page';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -22,7 +25,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/adoption',
-                element: <div>Adoption!</div>
+                element: <Adoption />
             },
             {
                 path: '/admin',
