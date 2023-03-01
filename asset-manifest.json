@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vinchdev/static/css/main.28fd32ad.css",
-    "main.js": "/vinchdev/static/js/main.eb8f1cb2.js",
-    "static/js/787.7d2879ef.chunk.js": "/vinchdev/static/js/787.7d2879ef.chunk.js",
+    "main.js": "/vinchdev/static/js/main.1484a217.js",
+    "static/js/496.23522018.chunk.js": "/vinchdev/static/js/496.23522018.chunk.js",
     "static/media/brand-icons.svg": "/vinchdev/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/vinchdev/static/media/icons.62d9dae4e0040e81c980.svg",
     "static/media/outline-icons.svg": "/vinchdev/static/media/outline-icons.9c4845b4b41ef40a22fa.svg",
@@ -21,11 +21,11 @@
     "static/media/outline-icons.woff2": "/vinchdev/static/media/outline-icons.687a4990ea22bb1a49d4.woff2",
     "index.html": "/vinchdev/index.html",
     "main.28fd32ad.css.map": "/vinchdev/static/css/main.28fd32ad.css.map",
-    "main.eb8f1cb2.js.map": "/vinchdev/static/js/main.eb8f1cb2.js.map",
-    "787.7d2879ef.chunk.js.map": "/vinchdev/static/js/787.7d2879ef.chunk.js.map"
+    "main.1484a217.js.map": "/vinchdev/static/js/main.1484a217.js.map",
+    "496.23522018.chunk.js.map": "/vinchdev/static/js/496.23522018.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28fd32ad.css",
-    "static/js/main.eb8f1cb2.js"
+    "static/js/main.1484a217.js"
   ]
 }
