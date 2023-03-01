@@ -2,7 +2,7 @@
   "name": "vinchdev",
   "version": "0.1.0",
   "private": false,
-  "homepage": "/vinchdev",
+  "homepage": "https://vinchbr.github.io/vinchdev",
   "author": "Vicenzo Naves",
   "dependencies": {
     "@lagunovsky/redux-react-router": "^4.3.0",
