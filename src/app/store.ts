@@ -2,6 +2,7 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
 import navbarReducer from "../features/navbar/navbarSlice";
 import breedMenuReducer from "../features/breedMenu/breedMenuSlice";
+import adoptionQueueReducer from "../features/adoptionQueue/adoptionQueueSlice";
 import { catApi } from "../services/cats";
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     counter: counterReducer,
     navbar: navbarReducer,
     breedMenu: breedMenuReducer,
+    adoption: adoptionQueueReducer,
     [catApi.reducerPath]: catApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

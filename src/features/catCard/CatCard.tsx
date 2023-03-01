@@ -1,8 +1,12 @@
 import React from "react";
 import { CategorizedCats, CatImage } from "../../types";
-import { Card, Image, Message } from "semantic-ui-react";
-import { useAppSelector } from "../../app/hooks";
+import { Button, Card, Image, Message } from "semantic-ui-react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { breedMenuActiveState } from "../breedMenu/breedMenuSlice";
+import {
+  addToAdoptionQueue,
+  adoptionQueueStatus,
+} from "../adoptionQueue/adoptionQueueSlice";
 
 interface Props {
   categorizedCats: CategorizedCats;
@@ -10,6 +14,10 @@ interface Props {
 
 export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
   const catCategory = useAppSelector(breedMenuActiveState);
+  const adoptionStatus = useAppSelector(adoptionQueueStatus);
+  console.log(adoptionStatus);
+  const dispatch = useAppDispatch();
+
   const catImages: CatImage[] | undefined =
     catCategory === "all"
       ? Object.values(categorizedCats).flat()
@@ -19,8 +27,30 @@ export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
       {catImages ? (
         catImages.map((catImage) => (
           <Card key={catImage.id}>
-            <Image src={catImage.url} />
-            {/*<Card.Content></Card.Content>*/}
+            <Card.Content>
+              <Image src={catImage.url} fluid />
+            </Card.Content>
+            <Card.Content extra>
+              {adoptionStatus.some(
+                (catStatus) => catStatus.id === catImage.id
+              ) ? (
+                <Card.Description>
+                  <Message info>Cat is waiting approval for adoption</Message>
+                </Card.Description>
+              ) : (
+                <Button
+                  basic
+                  color="green"
+                  onClick={() =>
+                    dispatch(
+                      addToAdoptionQueue({ id: catImage.id, status: "waiting" })
+                    )
+                  }
+                >
+                  Adopt Me!
+                </Button>
+              )}
+            </Card.Content>
           </Card>
         ))
       ) : (
