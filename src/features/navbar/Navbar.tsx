@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <Menu fixed="top" inverted stackable>
+      <Menu fixed="top" inverted>
         <Menu.Item
           header
           name="home"

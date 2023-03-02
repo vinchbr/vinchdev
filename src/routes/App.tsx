@@ -1,15 +1,26 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import {Container, Grid} from "semantic-ui-react";
 import { Navbar } from "../features/navbar/Navbar";
-import { Container } from "semantic-ui-react";
+import {MobileNavbar} from "../features/navbar/MobileNavbar";
 
 function App() {
     const location = useLocation()
 
   return (
-    <div className="App">
-      <Navbar />
-      <Container style={{ marginTop: "7rem" }}>
+    <Grid className="App">
+        <Grid.Row only='computer tablet'>
+            <Grid.Column>
+                <Navbar />
+            </Grid.Column>
+        </Grid.Row>
+        <Grid.Row only='mobile'>
+            <Grid.Column>
+                <MobileNavbar />
+            </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+        <Container>
           { location.pathname !== '/' ? (
               <Outlet />
           ) : (
@@ -61,7 +72,8 @@ function App() {
         {/*  </span>*/}
         {/*</header>*/}
       </Container>
-    </div>
+        </Grid.Row>
+    </Grid>
   );
 }
 

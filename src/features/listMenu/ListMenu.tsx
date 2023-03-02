@@ -12,7 +12,7 @@ export const ListMenu: React.FC<Props> = ({ listItems, title }) => {
   const activeState = useAppSelector(listMenuActiveState);
   const dispatch = useAppDispatch();
   return (
-    <Menu fluid vertical>
+    <Menu secondary vertical>
       <Menu.Item header>{title}</Menu.Item>
       <Menu.Item
         active={activeState === "all"}
