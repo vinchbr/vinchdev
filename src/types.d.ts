@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export interface CatImage {
   id: string;
   width: number;
@@ -56,4 +58,21 @@ export type CategorizedCats = {
 export interface AdoptionQueue {
   id: string;
   status: "waiting" | "approved" | "";
+}
+
+export interface WorkHistory {
+  title: string;
+  company: string;
+  category: string;
+  description: string;
+  technologies: string[];
+  date: string;
+}
+
+export interface ThemeConfig {
+  [key: string]: {
+    style: CSSProperties;
+    iconCorrection: CSSProperties;
+    className: string;
+  };
 }

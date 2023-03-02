@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Button,
   Container,
@@ -7,8 +8,9 @@ import {
   Image,
   Segment,
 } from "semantic-ui-react";
-import React from "react";
-
+import { WorkHistoryModal } from "./WorkHistoryModal";
+import resume from "../../data/Vicenzo_Color_Resume.pdf";
+import { Link } from "react-router-dom";
 export const Homepage = () => {
   return (
     <>
@@ -17,19 +19,22 @@ export const Homepage = () => {
           <Grid.Row>
             <Grid.Column width={8}>
               <Header as="h3" style={{ fontSize: "2em" }}>
-                We Help Companies and Companions
+                Tech Enthusiast looking for mew challenges
               </Header>
               <p style={{ fontSize: "1.33em" }}>
-                We can give your company superpowers to do things that they
-                never thought possible. Let us delight your customers and
-                empower your needs... through pure data analytics.
+                I've been working in the tech industry for 14 years and going
+                strong. I want to bring my experience onboard with a new company
+                looking for a seasoned engineer with the interest to step
+                outside of his comfort zone.
               </p>
               <Header as="h3" style={{ fontSize: "2em" }}>
-                We Make Bananas That Can Dance
+                Software Quality Leader with the passion for UI/UX Development
               </Header>
               <p style={{ fontSize: "1.33em" }}>
-                Yes that's right, you thought it was the stuff of dreams, but
-                even bananas can be bioengineered.
+                Through my career I've had the pleasure and invaluable
+                experience to work with some of the most passionate and amazing
+                co-workers, and I've learnt a lot from them and want to share my
+                experience with you.
               </p>
             </Grid.Column>
             <Grid.Column floated="right" width={6}>
@@ -43,7 +48,7 @@ export const Homepage = () => {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column textAlign="center">
-              <Button size="huge">Check Them Out</Button>
+              <WorkHistoryModal resumeUrl={resume} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -97,7 +102,7 @@ export const Homepage = () => {
             horizontal
             style={{ margin: "3em 0em", textTransform: "uppercase" }}
           >
-            <a href="#">Case Studies</a>
+            <Link to="#">Case Studies</Link>
           </Divider>
 
           <Header as="h3" style={{ fontSize: "2em" }}>

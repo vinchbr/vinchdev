@@ -18,3 +18,13 @@ code {
 .padded-container {
   padding-top: 7rem;
 }
+
+.vertical-timeline-element--work .vertical-timeline-element-content {
+  border-top: 3px solid #2196f3;
+}
+
+.vertical-timeline-element-icon .icon {
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
