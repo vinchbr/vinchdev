@@ -1,6 +1,6 @@
 import { Grid, Loader } from "semantic-ui-react";
 import { useGetImagesQuery } from "../services/cats";
-import BreedMenu from "../features/breedMenu/BreedMenu";
+import ListMenu from "../features/listMenu/ListMenu";
 import CatCard from "../features/catCard/CatCard";
 
 export const Adoption = () => {
@@ -13,7 +13,10 @@ export const Adoption = () => {
   return (
     <Grid>
       <Grid.Column width={3}>
-        <BreedMenu categories={Object.keys(catImages.data)} />
+        <ListMenu
+          listItems={Object.keys(catImages.data)}
+          title="Available Breeds"
+        />
       </Grid.Column>
       <Grid.Column stretched width={12}>
         <CatCard categorizedCats={catImages.data} />

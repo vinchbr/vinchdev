@@ -55,5 +55,5 @@ export type CategorizedCats = {
 
 export interface AdoptionQueue {
   id: string;
-  status: "waiting" | "approved";
+  status: "waiting" | "approved" | "";
 }

@@ -16,7 +16,7 @@ export const adoptionQueueSlice = createSlice({
     },
     approveAdoption: (state, action: PayloadAction<AdoptionQueue>) => {
       const index = state.findIndex((obj) => obj.id === action.payload.id);
-      state[index].status = "approved";
+      state[index].status = action.payload.status;
     },
   },
 });

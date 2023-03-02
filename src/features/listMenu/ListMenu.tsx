@@ -1,35 +1,37 @@
 import React from "react";
 import { Menu } from "semantic-ui-react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { breedMenuActiveState, setBreedMenuActive } from "./breedMenuSlice";
+import { listMenuActiveState, setListMenuActive } from "./listMenuSlice";
 
 interface Props {
-  categories: string[];
+  listItems: string[];
+  title: string;
 }
-export const BreedMenu: React.FC<Props> = ({ categories }) => {
-  const activeState = useAppSelector(breedMenuActiveState);
+
+export const ListMenu: React.FC<Props> = ({ listItems, title }) => {
+  const activeState = useAppSelector(listMenuActiveState);
   const dispatch = useAppDispatch();
   return (
     <Menu fluid text vertical>
       <Menu.Item header>Available Breeds</Menu.Item>
       <Menu.Item
         active={activeState === "all"}
-        onClick={() => dispatch(setBreedMenuActive("all"))}
+        onClick={() => dispatch(setListMenuActive("all"))}
       >
-        All Breeds
+        {title}
       </Menu.Item>
-      {categories.map((category, index) => (
+      {listItems.map((item, index) => (
         <Menu.Item
           key={index}
           fitted="horizontally"
-          active={activeState === category}
-          onClick={() => dispatch(setBreedMenuActive(category))}
+          active={activeState === item}
+          onClick={() => dispatch(setListMenuActive(item))}
         >
-          {category}
+          {item}
         </Menu.Item>
       ))}
     </Menu>
   );
 };
 
-export default BreedMenu;
+export default ListMenu;

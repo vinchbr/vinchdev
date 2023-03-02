@@ -9,19 +9,19 @@ const initialState: BreedMenuState = {
   activeItem: "all",
 };
 
-export const breedMenuSlice = createSlice({
-  name: "breedMenu",
+export const listMenuSlice = createSlice({
+  name: "listMenu",
   initialState,
   reducers: {
-    setBreedMenuActive: (state, action: PayloadAction<string>) => {
+    setListMenuActive: (state, action: PayloadAction<string>) => {
       state.activeItem = action.payload;
     },
   },
 });
 
-export const { setBreedMenuActive } = breedMenuSlice.actions;
+export const { setListMenuActive } = listMenuSlice.actions;
 
-export const breedMenuActiveState = (state: RootState) =>
-  state.breedMenu.activeItem;
+export const listMenuActiveState = (state: RootState) =>
+  state.listMenu.activeItem;
 
-export default breedMenuSlice.reducer;
+export default listMenuSlice.reducer;

@@ -1,11 +1,14 @@
 import React from "react";
-import { CategorizedCats, CatImage } from "../../types";
 import { Button, Card, Image, Message } from "semantic-ui-react";
+import { useLocation } from "react-router-dom";
+import { CategorizedCats, CatImage } from "../../types";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { breedMenuActiveState } from "../breedMenu/breedMenuSlice";
+import { breedMenuActiveState } from "../listMenu/listMenuSlice";
 import {
   addToAdoptionQueue,
   adoptionQueueStatus,
+  approveAdoption,
+  removeFromAdoptionQueue,
 } from "../adoptionQueue/adoptionQueueSlice";
 
 interface Props {
@@ -15,8 +18,9 @@ interface Props {
 export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
   const catCategory = useAppSelector(breedMenuActiveState);
   const adoptionStatus = useAppSelector(adoptionQueueStatus);
-  console.log(adoptionStatus);
   const dispatch = useAppDispatch();
+
+  const location = useLocation();
 
   const catImages: CatImage[] | undefined =
     catCategory === "all"
@@ -34,9 +38,41 @@ export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
               {adoptionStatus.some(
                 (catStatus) => catStatus.id === catImage.id
               ) ? (
-                <Card.Description>
-                  <Message info>Cat is waiting approval for adoption</Message>
-                </Card.Description>
+                location.pathname === "/admin" ? (
+                  <>
+                    <Button
+                      basic
+                      color="green"
+                      onClick={() =>
+                        dispatch(
+                          approveAdoption({
+                            id: catImage.id,
+                            status: "approved",
+                          })
+                        )
+                      }
+                    >
+                      Approve
+                    </Button>
+                    <Button
+                      color="red"
+                      onClick={() =>
+                        dispatch(
+                          removeFromAdoptionQueue({
+                            id: catImage.id,
+                            status: "",
+                          })
+                        )
+                      }
+                    >
+                      Reject
+                    </Button>
+                  </>
+                ) : (
+                  <Card.Description>
+                    <Message info>Cat is waiting approval for adoption</Message>
+                  </Card.Description>
+                )
               ) : (
                 <Button
                   basic
