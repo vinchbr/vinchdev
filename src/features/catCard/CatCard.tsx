@@ -3,7 +3,7 @@ import { Button, Card, Image, Message } from "semantic-ui-react";
 import { useLocation } from "react-router-dom";
 import { CategorizedCats, CatImage } from "../../types";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { breedMenuActiveState } from "../listMenu/listMenuSlice";
+import { listMenuActiveState } from "../listMenu/listMenuSlice";
 import {
   addToAdoptionQueue,
   adoptionQueueStatus,
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
-  const catCategory = useAppSelector(breedMenuActiveState);
+  const catCategory = useAppSelector(listMenuActiveState);
   const adoptionStatus = useAppSelector(adoptionQueueStatus);
   const dispatch = useAppDispatch();
 

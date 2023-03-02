@@ -1,14 +1,20 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "../features/navbar/Navbar";
 import { Container } from "semantic-ui-react";
 
 function App() {
+    const location = useLocation()
+
   return (
     <div className="App">
       <Navbar />
       <Container style={{ marginTop: "7rem" }}>
-        <Outlet />
+          { location.pathname !== '/' ? (
+              <Outlet />
+          ) : (
+              <div>Homepage</div>
+          )}
         {/*<header className="App-header">*/}
         {/*  <img src={logo} className="App-logo" alt="logo" />*/}
         {/*  <Counter />*/}

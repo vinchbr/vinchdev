@@ -12,18 +12,17 @@ export const ListMenu: React.FC<Props> = ({ listItems, title }) => {
   const activeState = useAppSelector(listMenuActiveState);
   const dispatch = useAppDispatch();
   return (
-    <Menu fluid text vertical>
-      <Menu.Item header>Available Breeds</Menu.Item>
+    <Menu fluid vertical>
+      <Menu.Item header>{title}</Menu.Item>
       <Menu.Item
         active={activeState === "all"}
         onClick={() => dispatch(setListMenuActive("all"))}
       >
-        {title}
+        Show all
       </Menu.Item>
       {listItems.map((item, index) => (
         <Menu.Item
           key={index}
-          fitted="horizontally"
           active={activeState === item}
           onClick={() => dispatch(setListMenuActive(item))}
         >
