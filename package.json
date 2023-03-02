@@ -2,7 +2,7 @@
   "name": "vinchdev",
   "version": "0.1.0",
   "private": false,
-  "homepage": "/vinchdev/#",
+  "homepage": "/vinchdev/#a",
   "author": "Vicenzo Naves",
   "dependencies": {
     "@lagunovsky/redux-react-router": "^4.3.0",
@@ -10,13 +10,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.14.2",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
     "devicon-react-svg": "^0.2.4",
-    "gh-pages": "^5.0.0",
-    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -55,7 +49,10 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.191",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-vertical-timeline-component": "^3.3.3"
   }

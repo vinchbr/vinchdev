@@ -26,10 +26,11 @@ export const WorkHistoryModal: React.FC<Props> = (resumeUrl) => {
       trigger={<Button size="huge">Brief work history</Button>}
       style={{ background: "lightgrey" }}
     >
-      <Modal.Content content scrolling style={{ background: "lightgrey" }}>
+      <Modal.Content scrolling style={{ background: "lightgrey" }}>
         <VerticalTimeline>
-          {workData.map((work) => (
+          {workData.map((work, j) => (
             <VerticalTimelineElement
+              key={j}
               contentStyle={{
                 borderTop: `3px solid ${
                   appTheme[`${work.category}Color`].style.background

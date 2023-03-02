@@ -12,6 +12,6 @@ test("renders learn react link", () => {
     </Provider>,
     { wrapper: BrowserRouter }
   );
-
-  expect(screen.getByText("Vicenzo Naves")).toBeInTheDocument();
+  const headers = screen.getAllByText("Vicenzo Naves");
+  headers.forEach((header) => expect(header).toBeInTheDocument());
 });
