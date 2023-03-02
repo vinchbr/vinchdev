@@ -32,7 +32,6 @@ export const MobileNavbar = () => {
                 onHide={() => setHideMenu(true)}
                 vertical
                 visible={!hideMenu}
-                height='100%'
                 >
                 <Menu.Menu position="right">
                     <Menu.Item

@@ -14,3 +14,7 @@ code {
   font-family: Organic, 'Helvetica Neue', sans-serif, sans-serif;
   font-size: 1.5rem;
 }
+
+.padded-container {
+  padding-top: 7rem;
+}
