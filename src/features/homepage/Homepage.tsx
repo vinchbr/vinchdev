@@ -5,77 +5,31 @@ import {
   Divider,
   Grid,
   Header,
-  Image,
   Segment,
 } from "semantic-ui-react";
-import { WorkHistoryModal } from "./WorkHistoryModal";
-import resume from "../../data/Vicenzo_Color_Resume.pdf";
 import { Link } from "react-router-dom";
+import { WorkHistory } from "./WorkHistory";
+import { AboutMe } from "./AboutMe";
 export const Homepage = () => {
   return (
     <>
-      <Segment style={{ padding: "8em 0em" }} vertical>
+      <Segment
+        style={{ padding: "8em 0em", background: "#656d4a", color: "white" }}
+        vertical
+      >
         <Grid container stackable verticalAlign="middle">
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <Header as="h3" style={{ fontSize: "2em" }}>
-                Tech Enthusiast looking for mew challenges
-              </Header>
-              <p style={{ fontSize: "1.33em" }}>
-                I've been working in the tech industry for 14 years and going
-                strong. I want to bring my experience onboard with a new company
-                looking for a seasoned engineer with the interest to step
-                outside of his comfort zone.
-              </p>
-              <Header as="h3" style={{ fontSize: "2em" }}>
-                Software Quality Leader with the passion for UI/UX Development
-              </Header>
-              <p style={{ fontSize: "1.33em" }}>
-                Through my career I've had the pleasure and invaluable
-                experience to work with some of the most passionate and amazing
-                co-workers, and I've learnt a lot from them and want to share my
-                experience with you.
-              </p>
-            </Grid.Column>
-            <Grid.Column floated="right" width={6}>
-              <Image
-                bordered
-                rounded
-                size="large"
-                src="https://react.semantic-ui.com/images/wireframe/white-image.png"
-              />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column textAlign="center">
-              <WorkHistoryModal resumeUrl={resume} />
-            </Grid.Column>
-          </Grid.Row>
+          <AboutMe />
         </Grid>
       </Segment>
 
-      <Segment style={{ padding: "0em" }} vertical>
+      <Segment style={{ padding: "0em", background: "#c2c5aa" }} vertical>
         <Grid celled="internally" columns="equal" stackable>
-          <Grid.Row textAlign="center">
-            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-              <Header as="h3" style={{ fontSize: "2em" }}>
-                "What a Company"
+          <Grid.Row>
+            <Grid.Column>
+              <Header as="h1" textAlign="center">
+                Brief Work History
               </Header>
-              <p style={{ fontSize: "1.33em" }}>
-                That is what they all say about us
-              </p>
-            </Grid.Column>
-            <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-              <Header as="h3" style={{ fontSize: "2em" }}>
-                "I shouldn't have gone with their competitor."
-              </Header>
-              <p style={{ fontSize: "1.33em" }}>
-                <Image
-                  avatar
-                  src="https://react.semantic-ui.com/images/avatar/large/nan.jpg"
-                />
-                <b>Nan</b> Chief Fun Officer Acme Toys
-              </p>
+              <WorkHistory />
             </Grid.Column>
           </Grid.Row>
         </Grid>

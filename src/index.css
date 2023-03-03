@@ -15,16 +15,11 @@ code {
   font-size: 1.5rem;
 }
 
-.padded-container {
-  padding-top: 7rem;
+.about-me {
+  padding: 8em 0;
+  background: #656d4a;
 }
 
-.vertical-timeline-element--work .vertical-timeline-element-content {
-  border-top: 3px solid #2196f3;
+.vertical-timeline-element-date {
+  font-size: 1.5rem!important;
 }
-
-.vertical-timeline-element-icon .icon {
-  margin-top: 2px;
-  margin-left: 5px;
-}
-
