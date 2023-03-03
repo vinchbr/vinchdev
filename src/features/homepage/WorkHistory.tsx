@@ -46,6 +46,7 @@ export const WorkHistory: React.FC = () => {
           <p>{work.description}</p>
         </VerticalTimelineElement>
       ))}
+
       <VerticalTimelineElement
         key="andMore"
         date="More on the resume"
