@@ -39,6 +39,6 @@ export const workHistory: WorkHistory[] = [
     category: "ruby",
     technologies: ["Ruby", "Ruby on Rails", "Postman", "Webdriver"],
     company: "Renew Financial",
-    date: "Oct/18 - Jul/21",
+    date: "Apr/15 - Oct/18",
   },
 ];
