@@ -23,3 +23,11 @@ code {
 .vertical-timeline-element-date {
   font-size: 1.5rem!important;
 }
+
+[class^='vertical-timeline-element--'] span svg path:nth-child(2) {
+  fill: white !important;
+}
+
+.vertical-timeline-element--ruby span svg path {
+  fill: white !important;
+}

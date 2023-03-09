@@ -1,8 +1,9 @@
 import React from "react";
-import { Grid, Header, Segment } from "semantic-ui-react";
+import { Grid, Segment } from "semantic-ui-react";
 import { WorkTimeline } from "./WorkTimeline";
 import { AboutMe } from "./AboutMe";
 import { SkillsAndTools } from "./SkillsAndTools";
+import { ProjectsTimeline } from "./ProjectsTimeline";
 export const Homepage = () => {
   return (
     <>
@@ -17,19 +18,16 @@ export const Homepage = () => {
 
       <Segment style={{ background: "#c2c5aa" }} vertical>
         <Grid columns="equal" stackable>
-          <Grid.Row>
-            <Grid.Column>
-              <Header as="h1" textAlign="center" color="red">
-                Brief Work History
-              </Header>
-              <WorkTimeline />
-            </Grid.Column>
-          </Grid.Row>
+          <WorkTimeline />
         </Grid>
       </Segment>
 
       <Segment vertical>
         <SkillsAndTools />
+      </Segment>
+
+      <Segment style={{ background: "#c2c5aa" }} vertical>
+        <ProjectsTimeline />
       </Segment>
     </>
   );

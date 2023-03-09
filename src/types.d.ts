@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, React } from "react";
 
 export interface CatImage {
   id: string;
@@ -72,7 +72,8 @@ export interface WorkHistory {
 export interface ThemeConfig {
   [key: string]: {
     style: CSSProperties;
-    iconCorrection: CSSProperties;
+    iconCorrection?: CSSProperties;
     className: string;
+    icon?: React.FC;
   };
 }
