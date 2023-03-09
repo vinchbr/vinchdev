@@ -10,7 +10,7 @@ const theme: ThemeConfig = {
       height: "45px",
       width: "45px",
       left: "32%",
-      top: "35%",
+      top: "32%",
     },
     className: "vertical-timeline-element--react",
   },
@@ -26,6 +26,16 @@ const theme: ThemeConfig = {
       top: "35%",
     },
     className: "vertical-timeline-element--ruby",
+  },
+  fileColor: {
+    style: {
+      height: "60px",
+      width: "60px",
+    },
+    iconCorrection: {
+      fontSize: "2.5rem",
+    },
+    className: "vertical-timeline-element--file",
   },
 };
 
