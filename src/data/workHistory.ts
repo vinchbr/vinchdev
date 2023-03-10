@@ -25,7 +25,7 @@ export const workHistory: WorkHistory[] = [
     description:
       "Implemented automation framework with CI/CD, implemented features and fixed bugs in the frontend. " +
       "Responsible for creating reusable component for login for transition into SSO. Helped hire 4 Frontend Engineers" +
-      "to re-staff the team that had left. Decomposed the Redux Saga of multiple applications into a library to be reused.",
+      " to re-staff the team that had left. Decomposed the Redux Saga of multiple applications into a library to be reused.",
     category: "react",
     technologies: ["React", "Redux", "webdriverIO", "Redux Saga"],
     company: "Apex Clearing",

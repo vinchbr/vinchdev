@@ -1,6 +1,7 @@
 import { Button, Grid, Header, Image } from "semantic-ui-react";
 import React from "react";
 import resume from "../../data/Vicenzo_Color_Resume.pdf";
+import me from "../../data/me.jpg";
 
 export const AboutMe = () => {
   return (
@@ -54,12 +55,7 @@ export const AboutMe = () => {
           </Button>
         </Grid.Column>
         <Grid.Column floated="right" width={6}>
-          <Image
-            bordered
-            rounded
-            size="large"
-            src="https://react.semantic-ui.com/images/wireframe/white-image.png"
-          />
+          <Image circular size="medium" src={me} />
         </Grid.Column>
       </Grid.Row>
     </>
