@@ -5,14 +5,15 @@ import listMenuReducer from "../features/listMenu/listMenuSlice";
 import adoptionQueueReducer from "../features/adoptionQueue/adoptionQueueSlice";
 import { catApi } from "../services/cats";
 
+export const reducers = {
+  counter: counterReducer,
+  navbar: navbarReducer,
+  listMenu: listMenuReducer,
+  adoption: adoptionQueueReducer,
+  [catApi.reducerPath]: catApi.reducer,
+};
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-    navbar: navbarReducer,
-    listMenu: listMenuReducer,
-    adoption: adoptionQueueReducer,
-    [catApi.reducerPath]: catApi.reducer,
-  },
+  reducer: reducers,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(catApi.middleware),
 });

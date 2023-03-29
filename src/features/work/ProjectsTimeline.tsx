@@ -5,7 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import appTheme from "../../icons";
+import appTheme from "../../utils/icons";
 import "react-vertical-timeline-component/style.min.css";
 
 export const ProjectsTimeline: React.FC = () => {

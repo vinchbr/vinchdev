@@ -1,13 +1,10 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import { Navbar } from "../features/navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import { Navbar } from "../../features/navbar/Navbar";
 import { Grid } from "semantic-ui-react";
-import { MobileNavbar } from "../features/navbar/MobileNavbar";
-import { Homepage } from "../features/homepage/Homepage";
+import { MobileNavbar } from "../../features/navbar/MobileNavbar";
 
-function App() {
-  const location = useLocation();
-
+export const App = () => {
   return (
     <div className="App">
       <Grid>
@@ -22,9 +19,9 @@ function App() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      {location.pathname === "/" ? <Homepage /> : <Outlet />}
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;

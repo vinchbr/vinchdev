@@ -5,7 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { workHistory } from "../../data/workHistory";
-import appTheme from "../../icons";
+import appTheme from "../../utils/icons";
 
 import "react-vertical-timeline-component/style.min.css";
 import resume from "../../data/Vicenzo_Color_Resume.pdf";

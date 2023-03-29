@@ -1,4 +1,4 @@
-import { ThemeConfig } from "./types";
+import { ThemeConfig } from "../types";
 
 import { ReactOriginal, ReduxOriginal, RubyPlain } from "devicons-react";
 

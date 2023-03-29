@@ -2,40 +2,15 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-
 import { store } from "./app/store";
-import App from "./routes/App";
 import reportWebVitals from "./reportWebVitals";
-import ErrorPage from "./routes/error-page";
-import Adoption from "./routes/Adoption";
-
+import { routesConfig } from "./routes/";
 import "./index.css";
 import "semantic-ui-css/semantic.min.css";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/adoption",
-        element: <Adoption />,
-      },
-      {
-        path: "/admin",
-        element: <div>Admin</div>,
-      },
-      {
-        path: "/contact",
-        element: <div>Contact</div>,
-      },
-    ],
-  },
-]);
-
+export const router = createHashRouter(routesConfig);
 root.render(
   <React.StrictMode>
     <Provider store={store}>

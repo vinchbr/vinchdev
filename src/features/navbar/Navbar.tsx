@@ -1,5 +1,5 @@
 import React from "react";
-import {Icon, Menu} from "semantic-ui-react";
+import { Icon, Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
@@ -48,9 +48,9 @@ export const Navbar = () => {
             onClick={() => dispatch(setActive("contact"))}
             as={Link}
             to="https://github.com/vinchbr/vinchdev"
-            target='_blank'
+            target="_blank"
           >
-            <Icon name='github' size='large'/>
+            <Icon name="github" size="large" />
           </Menu.Item>
         </Menu.Menu>
       </Menu>
