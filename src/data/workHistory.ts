@@ -21,15 +21,26 @@ export const workHistory: WorkHistory[] = [
     date: "Jul/21 - Feb/22",
   },
   {
+    title: "Frontend Engineer",
+    description:
+      "Learnt React/Redux/Redux Saga to keep up with the demands after I was the sole Engineer in the team. " +
+      "Helped the new manager hire up the team over my tenure and took over the Okta integration and some other " +
+      "permission based projects",
+    category: "react",
+    technologies: ["React", "Redux", "Redux Saga"],
+    company: "Apex Clearing",
+    date: "Apr/19 - Jul/21",
+  },
+  {
     title: "Senior Software Engineer in Test",
     description:
       "Implemented automation framework with CI/CD, implemented features and fixed bugs in the frontend. " +
       "Responsible for creating reusable component for login for transition into SSO. Helped hire 4 Frontend Engineers" +
       " to re-staff the team that had left. Decomposed the Redux Saga of multiple applications into a library to be reused.",
     category: "react",
-    technologies: ["React", "Redux", "webdriverIO", "Redux Saga"],
+    technologies: ["Typescript", "webdriverIO"],
     company: "Apex Clearing",
-    date: "Oct/18 - Jul/21",
+    date: "Oct/18 - Apr/19",
   },
   {
     title: "Senior Software Engineer in Test",
