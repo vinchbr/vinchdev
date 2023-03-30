@@ -1,6 +1,16 @@
 import { ThemeConfig } from "../types";
 
-import { ReactOriginal, ReduxOriginal, RubyPlain } from "devicons-react";
+import {
+  CypressioOriginal,
+  PlaywrightOriginal,
+  ReactOriginal,
+  ReduxOriginal,
+  RubyPlain,
+} from "devicons-react";
+
+import { ReactComponent as WdioLogo } from "../data/wdio.svg";
+import WatirLogo from "../data/Watir_logo.png";
+import { Image } from "semantic-ui-react";
 
 const icons: ThemeConfig = {
   reactColor: {
@@ -55,6 +65,58 @@ const icons: ThemeConfig = {
         style={{
           left: "33.5%",
           top: "28%",
+        }}
+      />
+    ),
+  },
+  wdioColor: {
+    style: {
+      backgroundColor: "rgb(234, 89, 6)",
+    },
+    className: "vertical-timeline-element--wdio",
+    icon: (
+      <WdioLogo
+        style={{
+          left: "40%",
+          top: "40%",
+          height: "auto",
+          width: "37px",
+        }}
+      />
+    ),
+  },
+  watirColor: {
+    style: {
+      backgroundColor: "lightgrey",
+    },
+    className: "vertical-timeline-element--watir",
+    icon: <Image src={WatirLogo} />,
+  },
+  playwrightColor: {
+    style: {
+      backgroundColor: "lightgrey",
+    },
+    className: "vertical-timeline-element--playwright",
+    icon: (
+      <PlaywrightOriginal
+        size={54}
+        style={{
+          left: "30%",
+          top: "27%",
+        }}
+      />
+    ),
+  },
+  cypressColor: {
+    style: {
+      backgroundColor: "lightgrey",
+    },
+    className: "vertical-timeline-element--playwright",
+    icon: (
+      <CypressioOriginal
+        style={{
+          left: "30%",
+          top: "27%",
         }}
       />
     ),

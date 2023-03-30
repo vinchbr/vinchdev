@@ -60,10 +60,9 @@ export interface AdoptionQueue {
   status: "waiting" | "approved" | "";
 }
 
-export interface WorkHistory {
+export interface WorkHistory extends Pick<Category, "category"> {
   title: string;
   company: string;
-  category: string;
   description: string;
   technologies: string[];
   date: string;
@@ -76,4 +75,23 @@ export interface ThemeConfig {
     className: string;
     icon?: React.FC;
   };
+}
+
+export interface ProjectDetails extends Pick<Category, "category"> {
+  technologies: string[];
+  title: string;
+  subheader: string;
+  description: string;
+}
+
+interface Category {
+  category:
+    | "react"
+    | "ruby"
+    | "file"
+    | "redux"
+    | "watir"
+    | "wdio"
+    | "playwright"
+    | "cypress";
 }
