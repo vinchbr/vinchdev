@@ -5,6 +5,7 @@ export interface CatImage {
   width: number;
   height: number;
   url: string;
+  adoptionStatus?: string;
   breeds: Breed[];
 }
 

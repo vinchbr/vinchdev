@@ -3,6 +3,7 @@ import { ErrorPage } from "./error-page";
 import { Adoption } from "./adoption/Adoption";
 import { App } from "./app/App";
 import { Homepage } from "./homepage/Homepage";
+import { Admin } from "./admin/Admin";
 
 export { Adoption } from "./adoption/Adoption";
 export { App } from "./app/App";
@@ -23,7 +24,7 @@ export const routesConfig = [
       },
       {
         path: "/admin",
-        element: <div>Admin</div>,
+        element: <Admin />,
       },
       {
         path: "/contact",
