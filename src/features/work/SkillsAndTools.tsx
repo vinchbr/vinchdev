@@ -74,7 +74,7 @@ export const SkillsAndTools = () => {
           </Header>
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
+      <Grid.Row centered>
         <Grid.Column width={3}>
           <List>
             <List.Item>

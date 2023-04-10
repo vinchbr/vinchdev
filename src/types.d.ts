@@ -72,7 +72,6 @@ export interface ThemeConfig {
   [key: string]: {
     style: CSSProperties;
     iconCorrection?: CSSProperties;
-    className: string;
     icon?: React.FC;
   };
 }

@@ -1,7 +1,6 @@
 import { ThemeConfig } from "../types";
 
 import {
-  CypressioOriginal,
   PlaywrightOriginal,
   ReactOriginal,
   ReduxOriginal,
@@ -17,48 +16,25 @@ const icons: ThemeConfig = {
     style: {
       background: "#61DAFB",
     },
-    className: "vertical-timeline-element--react",
-    icon: (
-      <ReactOriginal
-        size={45}
-        style={{
-          left: "32%",
-          top: "32%",
-        }}
-      />
-    ),
+    icon: <ReactOriginal className={"vertical-timeline-element--react"} />,
   },
   rubyColor: {
     style: {
       background: "#d91404",
     },
-    className: "vertical-timeline-element--ruby",
-    icon: (
-      <RubyPlain
-        size={40}
-        style={{
-          left: "35%",
-          top: "35%",
-        }}
-        fill="white"
-      />
-    ),
+    icon: <RubyPlain className={"vertical-timeline-element--ruby"} />,
   },
   fileColor: {
     style: {
-      height: "60px",
-      width: "60px",
+      backgroundColor: "green",
+      height: "100%",
+      width: "100%",
     },
-    iconCorrection: {
-      fontSize: "2.5rem",
-    },
-    className: "vertical-timeline-element--file",
   },
   reduxColor: {
     style: {
       backgroundColor: "#764abc",
     },
-    className: "vertical-timeline-element--redux",
     icon: (
       <ReduxOriginal
         size={45}
@@ -66,6 +42,7 @@ const icons: ThemeConfig = {
           left: "33.5%",
           top: "28%",
         }}
+        className={"vertical-timeline-element--redux"}
       />
     ),
   },
@@ -73,52 +50,22 @@ const icons: ThemeConfig = {
     style: {
       backgroundColor: "rgb(234, 89, 6)",
     },
-    className: "vertical-timeline-element--wdio",
-    icon: (
-      <WdioLogo
-        style={{
-          left: "40%",
-          top: "40%",
-          height: "auto",
-          width: "37px",
-        }}
-      />
-    ),
+    icon: <WdioLogo className={"vertical-timeline-element--wdio"} />,
   },
   watirColor: {
     style: {
       backgroundColor: "lightgrey",
     },
-    className: "vertical-timeline-element--watir",
-    icon: <Image src={WatirLogo} />,
+    icon: (
+      <Image src={WatirLogo} className={"vertical-timeline-element--watir"} />
+    ),
   },
   playwrightColor: {
     style: {
       backgroundColor: "lightgrey",
     },
-    className: "vertical-timeline-element--playwright",
     icon: (
-      <PlaywrightOriginal
-        size={54}
-        style={{
-          left: "30%",
-          top: "27%",
-        }}
-      />
-    ),
-  },
-  cypressColor: {
-    style: {
-      backgroundColor: "lightgrey",
-    },
-    className: "vertical-timeline-element--playwright",
-    icon: (
-      <CypressioOriginal
-        style={{
-          left: "30%",
-          top: "27%",
-        }}
-      />
+      <PlaywrightOriginal className={"vertical-timeline-element--playwright"} />
     ),
   },
 };

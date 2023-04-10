@@ -29,7 +29,6 @@ export const ProjectsTimeline: React.FC = () => {
                   appTheme[`${project.category}Color`].style.background
                 }`,
               }}
-              className={appTheme[`${project.category}Color`].className}
               iconStyle={appTheme[`${project.category}Color`].style}
               icon={appTheme[`${project.category}Color`].icon}
             >

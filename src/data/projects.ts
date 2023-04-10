@@ -29,8 +29,8 @@ export const projects: ProjectDetails[] = [
     title: "Optimize Health",
     subheader: "E2E Automation that reduced regression time by 80%",
     technologies: ["Typescript", "Apollo Client", "PlaywrightJS", "ArgoCD"],
-    category: "cypress",
+    category: "wdio",
     description:
-      "Established the QA department and quality processes and practices for SOC2 compliance. Introduced",
+      "Established the QA department and quality processes and practices for SOC2 compliance. Introduced ",
   },
 ];

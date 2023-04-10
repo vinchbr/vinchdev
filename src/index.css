@@ -24,14 +24,74 @@ code {
   font-size: 1.5rem!important;
 }
 
-[class^='vertical-timeline-element--'] span svg path:nth-child(2) {
-  fill: white !important;
+@media (max-width: 1169px) {
+  .vertical-timeline-element--react {
+    left: 36% !important;
+    top: 36% !important;
+    width: 85% !important;
+    height: 85% !important;
+  }
+  .vertical-timeline-element--ruby {
+    fill: white !important;
+    width: 70% !important;
+    height: 70% !important;
+    left: 41% !important;
+    top: 41% !important;
+  }
+
+  .vertical-timeline-element--file {
+    font-size: 2rem !important;
+    padding: 18% 50% 0 0;
+    color: white;
+  }
+
+  .vertical-timeline-element--playwright {
+    left: 32% !important;
+    top: 30% !important;
+    width: 95% !important;
+    height: 95% !important;
+  }
 }
 
-.vertical-timeline-element--ruby span svg path {
-  fill: white !important;
+@media (min-width: 1170px) {
+  .vertical-timeline-element--react {
+    width: 85% !important;
+    height: 85% !important;
+    left: 29% !important;
+    top: 29% !important;
+  }
+
+  .vertical-timeline-element--ruby {
+    fill: white !important;
+    width: 75% !important;
+    height: 75% !important;
+    left: 33% !important;
+    top: 33% !important;
+  }
+
+  .vertical-timeline-element--file {
+    font-size: 2.5rem !important;
+    padding: 25% 0 0 10%;
+    color: white;
+  }
+
+  .vertical-timeline-element--playwright {
+    left: 25% !important;
+    top: 25% !important;
+    width: 95% !important;
+    height: 95% !important;
+  }
+
+  .vertical-timeline-element--wdio {
+    left: 40% !important;
+    top: 40% !important;
+    width: 37px !important;
+    height: auto !important;
+  }
+
 }
 
-.vertical-timeline-element--redux {
 
+.vertical-timeline-element--react g {
+  fill: white;
 }

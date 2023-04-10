@@ -29,7 +29,6 @@ export const WorkTimeline: React.FC = () => {
                   appTheme[`${work.category}Color`].style.background
                 }`,
               }}
-              className={appTheme[`${work.category}Color`].className}
               date={work.date}
               iconStyle={appTheme[`${work.category}Color`].style}
               icon={appTheme[`${work.category}Color`].icon}
@@ -52,7 +51,6 @@ export const WorkTimeline: React.FC = () => {
           <VerticalTimelineElement
             key="andMore"
             date="More on the resume"
-            className={appTheme["fileColor"].className}
             icon={
               <Button
                 href={resume}
@@ -62,12 +60,10 @@ export const WorkTimeline: React.FC = () => {
                 icon={
                   <Icon
                     name="file pdf outline"
-                    size="big"
-                    style={appTheme["fileColor"].iconCorrection}
+                    className={"vertical-timeline-element--file"}
                   />
                 }
                 style={appTheme["fileColor"].style}
-                color="green"
               />
             }
           ></VerticalTimelineElement>
