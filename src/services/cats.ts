@@ -21,7 +21,7 @@ export const catApi = createApi({
         response.reduce((acc: CategorizedCats, curr: CatImage) => {
           const breedName: string =
             curr.breeds.length > 0 ? curr.breeds[0].name : "unknown";
-
+          curr.adoptionStatus = "";
           if (!acc[breedName]) {
             acc[breedName] = [];
           }
@@ -38,4 +38,20 @@ export const catApi = createApi({
   }),
 });
 
+export const updateAdoptionStatus = (
+  draftCatImages: CategorizedCats,
+  catImage: CatImage,
+  status: string
+) => {
+  let foundCat;
+  for (const key of Object.keys(draftCatImages)) {
+    foundCat = draftCatImages[key].find(
+      (cat: CatImage) => cat.id === catImage.id
+    );
+    if (foundCat) {
+      foundCat.adoptionStatus = status;
+      break;
+    }
+  }
+};
 export const { useGetImagesQuery, useFilterByBreedQuery } = catApi;

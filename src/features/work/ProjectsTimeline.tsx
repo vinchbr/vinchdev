@@ -23,7 +23,7 @@ export const ProjectsTimeline: React.FC = () => {
         <VerticalTimeline>
           {projects.map((project: ProjectDetails, j) => (
             <VerticalTimelineElement
-              key={j}
+              key={`${project.category}-${j}`}
               contentStyle={{
                 borderTop: `3px solid ${
                   appTheme[`${project.category}Color`].style.background
@@ -32,9 +32,9 @@ export const ProjectsTimeline: React.FC = () => {
               iconStyle={appTheme[`${project.category}Color`].style}
               icon={appTheme[`${project.category}Color`].icon}
             >
-              <Label.Group circular>
-                {project.technologies.map((tech: string) => (
-                  <Label>{tech}</Label>
+              <Label.Group circular key={`${project.category}-${j}`}>
+                {project.technologies.map((tech: string, k) => (
+                  <Label key={`${tech}-${k}`}>{tech}</Label>
                 ))}
               </Label.Group>
               <Header as="h3">
@@ -46,8 +46,8 @@ export const ProjectsTimeline: React.FC = () => {
               {project.description
                 .split(".")
                 .filter(String)
-                .map((desc) => (
-                  <p>{desc}</p>
+                .map((desc, k) => (
+                  <p key={`${desc}-${k}`}>{desc}</p>
                 ))}
             </VerticalTimelineElement>
           ))}

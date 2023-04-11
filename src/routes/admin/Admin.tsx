@@ -1,14 +1,11 @@
 import { Container, Grid, Loader } from "semantic-ui-react";
 
 import { useGetImagesQuery } from "../../services/cats";
-import { useAppSelector } from "../../app/hooks";
 
 import CatCard from "../../features/catCard/CatCard";
-import { adoptionQueueStatus } from "../../features/adoptionQueue/adoptionQueueSlice";
 import ListMenu from "../../features/listMenu/ListMenu";
 
 export const Admin = () => {
-  const adoptionStatus = useAppSelector(adoptionQueueStatus);
   const catImages = useGetImagesQuery();
   return (
     <Container className="adoptionContainer" data-testid="adminList">

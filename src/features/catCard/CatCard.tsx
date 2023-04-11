@@ -1,15 +1,11 @@
 import React from "react";
-import { Button, Card, Image, Message } from "semantic-ui-react";
+import { Card, Image, Message, Dimmer, Icon, Header } from "semantic-ui-react";
 import { useLocation } from "react-router-dom";
 import { CategorizedCats, CatImage } from "../../types";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import { listMenuActiveState } from "../listMenu/listMenuSlice";
-import {
-  addToAdoptionQueue,
-  adoptionQueueStatus,
-  approveAdoption,
-  removeFromAdoptionQueue,
-} from "../adoptionQueue/adoptionQueueSlice";
+import { AdminControls } from "./AdminControls";
+import { AdoptionControls } from "./AdoptionControls";
 
 interface Props {
   categorizedCats: CategorizedCats;
@@ -17,8 +13,6 @@ interface Props {
 
 export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
   const catCategory = useAppSelector(listMenuActiveState);
-  const adoptionStatus = useAppSelector(adoptionQueueStatus);
-  const dispatch = useAppDispatch();
 
   const location = useLocation();
 
@@ -30,64 +24,28 @@ export const CatCard: React.FC<Props> = ({ categorizedCats }) => {
     <Card.Group doubling itemsPerRow={3} stackable>
       {catImages ? (
         catImages.map((catImage) => (
-          <Card key={catImage.id}>
+          <Dimmer.Dimmable as={Card} key={catImage.id}>
             <Card.Content>
               <Image src={catImage.url} fluid />
             </Card.Content>
-            <Card.Content extra>
-              {adoptionStatus.some(
-                (catStatus) => catStatus.id === catImage.id
-              ) ? (
-                location.pathname === "/admin" ? (
-                  <>
-                    <Button
-                      basic
-                      color="green"
-                      onClick={() =>
-                        dispatch(
-                          approveAdoption({
-                            id: catImage.id,
-                            status: "approved",
-                          })
-                        )
-                      }
-                    >
-                      Approve
-                    </Button>
-                    <Button
-                      color="red"
-                      onClick={() =>
-                        dispatch(
-                          removeFromAdoptionQueue({
-                            id: catImage.id,
-                            status: "",
-                          })
-                        )
-                      }
-                    >
-                      Reject
-                    </Button>
-                  </>
+            {catImage.adoptionStatus === "approved" ? (
+              <></>
+            ) : (
+              <Card.Content extra>
+                {location.pathname === "/admin" ? (
+                  <AdminControls catImage={catImage} />
                 ) : (
-                  <Card.Description>
-                    <Message info>Cat is waiting approval for adoption</Message>
-                  </Card.Description>
-                )
-              ) : (
-                <Button
-                  basic
-                  color="green"
-                  onClick={() =>
-                    dispatch(
-                      addToAdoptionQueue({ id: catImage.id, status: "waiting" })
-                    )
-                  }
-                >
-                  Adopt Me!
-                </Button>
-              )}
-            </Card.Content>
-          </Card>
+                  <AdoptionControls catImage={catImage} />
+                )}
+              </Card.Content>
+            )}
+            <Dimmer active={catImage.adoptionStatus === "approved"}>
+              <Header as="h2" icon inverted>
+                <Icon name="heart" />
+                Adopted!
+              </Header>
+            </Dimmer>
+          </Dimmer.Dimmable>
         ))
       ) : (
         <Message>

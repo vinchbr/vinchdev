@@ -1,6 +1,7 @@
 import { ThemeConfig } from "../types";
 
 import {
+  NextjsLine,
   PlaywrightOriginal,
   ReactOriginal,
   ReduxOriginal,
@@ -67,6 +68,12 @@ const icons: ThemeConfig = {
     icon: (
       <PlaywrightOriginal className={"vertical-timeline-element--playwright"} />
     ),
+  },
+  nextjsColor: {
+    style: {
+      backgroundColor: "lightgrey",
+    },
+    icon: <NextjsLine className={"vertical-timeline-element--nextjs"} />,
   },
 };
 

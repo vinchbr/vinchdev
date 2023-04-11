@@ -56,7 +56,7 @@ export type CategorizedCats = {
   [key: string]: CatImage[];
 };
 
-export interface AdoptionQueue {
+export interface AdoptionRequest {
   id: string;
   status: "waiting" | "approved" | "";
 }
@@ -93,5 +93,6 @@ interface Category {
     | "watir"
     | "wdio"
     | "playwright"
-    | "cypress";
+    | "cypress"
+    | "nextjs";
 }

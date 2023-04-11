@@ -2,9 +2,18 @@ import { ProjectDetails } from "../types";
 
 export const projects: ProjectDetails[] = [
   {
+    title: "F1 2022 OBS Overlay",
+    subheader:
+      "NextJS Server to read the UDP server provided by the game and display lap data for stream viewers",
+    technologies: ["NextJS", "React", "Typescript", "Websocket.IO"],
+    category: "nextjs",
+    description:
+      'IN PROGRESS. Reading data from the game UDP server, updates a React UI to display lap data. Basic functionality done, there is still a LONG list of things I want to implement, this is my first "full-stack" project. Check my github page for it!',
+  },
+  {
     title: "Adopt-a-Cat",
     subheader:
-      "Small Redux example using CatAPI to fetch random cat images and information",
+      "Small Redux example using CatAPI to fetch random cat images and information.",
     technologies: [
       "React",
       "Redux",
@@ -15,7 +24,7 @@ export const projects: ProjectDetails[] = [
     ],
     category: "react",
     description:
-      'Adopt-a-Cat is using Redux, RTK, to manage a cat "inventory" and an admin panel to approve/reject adoption requests. Using some re-usable components and building the page based on data being fetched/stored within Redux.',
+      'IN PROGRESS. Adopt-a-Cat is using Redux, RTK, to manage a cat "inventory" and an admin panel to approve/reject adoption requests. Using some re-usable components and building the page based on data being fetched/stored within Redux.',
   },
   {
     title: "Casting Networks Regression",

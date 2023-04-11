@@ -26,17 +26,17 @@ code {
 
 @media (max-width: 1169px) {
   .vertical-timeline-element--react {
-    left: 36% !important;
-    top: 36% !important;
+    left: 37% !important;
+    top: 37% !important;
     width: 85% !important;
     height: 85% !important;
   }
   .vertical-timeline-element--ruby {
     fill: white !important;
-    width: 70% !important;
-    height: 70% !important;
-    left: 41% !important;
-    top: 41% !important;
+    width: 65% !important;
+    height: 65% !important;
+    left: 44% !important;
+    top: 44% !important;
   }
 
   .vertical-timeline-element--file {
@@ -63,8 +63,8 @@ code {
 
   .vertical-timeline-element--ruby {
     fill: white !important;
-    width: 75% !important;
-    height: 75% !important;
+    width: 70% !important;
+    height: 70% !important;
     left: 33% !important;
     top: 33% !important;
   }
@@ -88,7 +88,12 @@ code {
     width: 37px !important;
     height: auto !important;
   }
-
+.vertical-timeline-element--nextjs {
+  width: 4rem !important;
+  height: 4rem !important;
+  left: 24% !important;
+  top: 24% !important;
+}
 }
 
 
